@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- 해당 HTML 문서의 문자 인코딩 방식을 명시 -->
+    <meta charset="UTF-8">
+
+    <!--
+        width=device-width  -> 장치의 화면 너비를 따르도록 페이지 너비를 설정합니다
+        initial-scale=1.0   -> 브라우저에서 페이지를 처음로드 할 때 초기 확대 / 축소 수준을 설정
+        viewport : 현재 접속한 디바이스의 해상도에 맞게 보여주겠다.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    </style>
+    <title>웹 사이트 제목</title>
+
+    <style>
+        .img {
+            background-image: url(images/norange.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:auto;
+            color: white;
+            text-shadow:black 0.1em 0.1em 0.1em;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        
+        @참고 : https://getbootstrap.com/docs/5.0/layout/containers/
+        컨네이너 클래스  
+         - 가장 기본적인 레이아웃 원소이다.
+         - Grid(격자 구조) 레이아웃 구현에 필요하다.
+         - 자식 컨테이너를 둘 수 있다. (하지만 필요 없다.)
+         - 해상도에 맞게 고정적인 너비를 가지고 있다.
+         - class="container-중단점" 형식으로 지정하면
+           중단점에 도달할때까지 100% 너비를 갖도록 한다.
+
+           @참고 : https://getbootstrap.com/docs/5.0/layout/breakpoints/
+           ex) breakpoint (중단점)
+               반응형 레이아웃이 장치 또는 뷰포트의 크기에 따라서 어떻게 작동하는지에 대한 커스터마이징 가능한 너비값이다.
+               
+               [종류]
+                sm	≥576px
+                md	≥768px
+                lg	≥992px
+                xl	≥1200px
+                xxl	≥1400px
+
+                컨테이너 클래스를 예로들어보자.
+
+                만약 container-lg라고 하게 되면  992px에 도달할때까지 무조건 화면이 꽉차도록 되어있고
+                그 이후부터는 xl, xxl 중단점에 도달할 때까지 이전 너비에서 고정된다.
+
+                즉 화면크기가 1200px까지 도달 할때까지 992px에서 고정된다.
+                그리고 화면너비가 1200px에 도달하면 1400px에 도달할때까지 컨테이너 크기가 1200px로 고정된다.
+
+    -->
+    <div class="container">
+
+        <!--
+            @참고 https://getbootstrap.com/docs/5.0/utilities/spacing/
+            Spacing (간격 설정 클래스)
+            
+                형식
+                1. [프로퍼티]-[크기] : 모든 방향으로 크기 만큼 간격을 둠
+                2. [프로퍼티][방향]-[크기] : 해당 방향으로 크기만큼 간격을 둠
+                3. [프로퍼티][방향]-[중단점]-[크기] : 중단점 이후에 해당 방향으로 크기만큼 간격을 둠
+
+                [프로퍼티]
+                접두사 m : 마진
+                접두사 p : 패딩
+                ----------------------------
+
+                [방향]
+                간격을 둘 방향을 말한다.
+                t : top 
+                b : bottom
+                s : start (해당 태그의 direction 속성값이 : ltr(left to right) 일때는 left  )
+                          (해당 태그의 direction 속성값이 : rtl(right to left) 일때는 right )
+                e : end (s 반대임)
+                x : left, right 둘다
+                y : top, bottom 둘다
+
+                [크기]
+                0 ~ 5, auto
+                0은 걍 0으로 설정 한다고 보면댐
+
+                ex) mt-4 : 해당 클래스가 부여된 태그의 상단 마진의 크기를 4만큼 설정한다.
+                    m-4 : 해당 클래스가 부여된 태그의 모든방향의 마진을 크기를 4만큼 설정한다.
+                    px-3 : 해당 클래스가 부여된 태그의 좌우 방향의 패딩을 크기를 3만큼 설정한다.
+                    mt-sm-4 : 화면크기가 sm (576) 이하일 떄까지는 동작하지 않고 이상 일때 해당 클래스가 부여된 
+                              태그의 상단 마진의 크기를 4만큼 설정한다.
+            
+        -->
+
+        <!--
+            @참고 https://getbootstrap.com/docs/5.0/utilities/borders/#sizes
+            Border (테두리 관련 클래스)
+
+            형식
+            border : 모든 방향에 테두리를 적용하겠다.
+            boredr-[방향] : 해당 방향의 테두리를 사용하겠다.
+            border-[크기] : 두께를 사이즈 만큼 설정한다.
+            border-[상태색상] : 테두리 색상을 설정하겠다.
+            rounded-[크기] : 모서리의 둥근 정도를 사이즈만큼 설정한다.
+
+            ex)
+            border-top border-3 border-primary
+            태그에 이렇게 3가지 클래스를 달아주면 위쪽 테두리의 두께를 3, 색상은
+            파란색으로 설정한다.
+        
+        -->
+
+        <!-- border-success : 경계선 색을 초록색으로 설정한다. -->
+        <!-- bg-secondary : 배경색을 회색깔로 설정한다. -->
+
+        <div class="py-2 border border-3 border-success rounded-3 bg-secondary">
+
+            <!-- text-center 클래스는 해당 태그의 문자를 중앙으로 정렬해준다. -->
+            <h1 class="text-center"> 윤정도를 소개합니다.</h1>
+            <p class="text-center"> 짱도리도리도리 두리두리 </p>
+
+            <!-- btn : 버튼으로 만듬 -->
+            <!-- btn-primary : 버튼 색상을 파란색 계통으로 함 -->
+            <!-- btn-lg : 보통 버튼보다 좀더 큰 크기-->
+            <p class="text-center">
+                <a class="btn btn-primary btn-lg" href="#" role="button">부트스트랩 공부하기</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container position-relative">
+        <div class="m-3 text-center w-100">
+            <img src="images/norange.png" class="rounded-3">
+            <h4 class="position-absolute translate-middle start-50 top-50 text-white">안녕하세요 저는 노랑이라고 해요</h4>
+
+        </div>
+    </div>
+</body>
+</html>

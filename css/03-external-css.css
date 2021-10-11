@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.navbar {
+	background: linear-gradient(to right, #777, #aaa); /*위에서 아래로 */
+}
+
+.nav-link {
+    color: burlywood;
+}
+
+.nav-link:hover {
+    color: #000;
+    transition: color 0.5s ease-in-out;
+}
+
+.nav-link[aria-current="page"] {
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.nav-item a:hover {
+	animation-name: bigger;
+	animation-duration: 0.5s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+@keyframes bigger {
+	from {
+		transform: scale(1);
+	}
+
+	to {
+		transform: scale(1.1);
+	}
+}
+
+.navbar-brand img {
+    margin-bottom: 5px;
+}
+
+.navbar-brand span {
+    text-decoration: underline aquamarine;
+    color: #fff
+}
+
+.navbar-brand span:hover {
+	/* 
+        span 요소는 인라인 태그라 transform 애니메이션이 안먹힘 
+        그래서 인라인 블록으로 해준 후 애니메이션 해야함 
+    */
+	display: inline-block;
+	-webkit-animation-name: brand-hover;
+	animation-name: brand-hover;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+}
+
+@keyframes brand-hover {
+	from {
+		color: darkorange;
+		transform: scale(1.2);
+	}
+
+
+	to {
+		color: darkslateblue;
+		transform: scale(1);
+	}
+}
+
+/* 해상도가 768px 이하일 때 동작 */
+@media (max-width:768px) {
+    .navbar-light .nav-link[aria-current="page"] {
+        border:none;
+    }
+    .navbar-light .nav-item a:hover {
+        color:dimgrey;
+        animation-name: none;
+    }
+}

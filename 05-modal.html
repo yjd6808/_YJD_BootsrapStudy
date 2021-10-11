@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script src="js/bootstrap.js"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		
+		<!-- 
+			@참고 : https://getbootstrap.com/docs/5.0/components/modal/
+			모달 다이얼로그를 열기위한 버튼
+
+			data-bs-toggle="modal" 필수입력
+			data-bs-target="[모달 다이얼로그 ID]"
+		-->
+		<button type="button" class="btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#test-modal">노랑이와 놀기</button>
+
+		<!-- 
+			모달 다이얼로그 
+			간지나게 열리도록 하기위해 fade 옵션을 준다.
+			모달 다이얼로그 ID값을 지정해줌으로써 버튼과 연결해준다.
+		-->
+		<div class="modal fade" id="test-modal" >
+
+			<!-- 
+				modal-dialog : 모달 다이얼로그
+				modal-dialog-centered : 다이얼로그가 중앙 기준으로 생성된다.
+				modal-dialog-scrollable : modal content의 높이가 정해지지 않은 경우
+				                          화면에 내용이 꽉찰 경우 스크롤이 가능하도록 한다.
+
+				centered와 scrollable은 선택사항이다.
+			 -->
+
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" >
+				<div class="modal-content" style="height: 600px;">
+					<div class="modal-header">	<!-- 헤더 -->
+						<h5 class="modal-title">
+							노랑이에게 무엇을 주시겠습니까?
+						</h5>
+					</div>
+					<div class="modal-body">	<!-- 내용 -->
+						<form>
+							<div>
+								<input type="radio" name="thing" id="fish" checked>
+								<label for="fish">생선</label>
+							</div>
+							<div>
+								<input type="radio" name="thing" id="toy">
+								<label for="toy">장난감</label>
+							</div>
+
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+							<h2>ㅁ</h2>
+						</form>
+					</div>
+					<div class="modal-footer">	<!-- 푸터 -->
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">무시</button>
+						<button type="button" class="btn btn-primary">전달</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
