@@ -48,7 +48,9 @@
 				둘 모두 DOM 요소들이 모두 로딩이 완료된 후에 호출된다.
 			*/
 			$(() => {
+				
 				$("#registerBtn").on("click", (e) => {
+					throw "abcd";
 					$("#loginBtn").removeClass("active");
 					$("#registerBtn").addClass("active");
 					$("#loginForm").fadeOut(100);
@@ -64,6 +66,12 @@
 					e.preventDefault();
 				});
 			});
+
+			window.onerror = function (msg, url, line) {
+               alert("Message : " + msg );
+               alert("url : " + url );
+               alert("Line number : " + line );
+            }
 		</script>
 
 		<!-- 인용구 -->
